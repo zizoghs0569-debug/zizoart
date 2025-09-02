@@ -1,0 +1,367 @@
+/* Reset & basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+
+  body {
+    padding-top: 70px; /* adjust depending on navbar height */
+    font-family: "Noto Serif Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  
+    background-color: #000;
+    color: #fff;
+
+
+
+    
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;  /* keeps it at the top */
+    top: 0;           /* distance from top */
+    left: 0;
+    width: 100%;      /* full width */
+    background-color: #61100d; /* black navbar */
+    color: #c2a97c;
+    z-index: 1000;    /* stay above other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .navbar .nav-links li a:hover {
+    color: #c2a97c;
+  }
+  
+
+  /* Hamburger */
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+  
+
+.hamburger { font-size: 24px; cursor: pointer; }
+.menu { display: none; background: #333; color:#fff; padding: 10px 20px; }
+.menu a { display:block; text-decoration:none; color:#fff; padding:5px 0; }
+  /* Hero Section */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 50px;
+    gap: 20px;
+    background-image: url("backgb.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;   /* prend toute la hauteur de l’écran */
+  }
+  
+  .hero-left img {
+    max-width: 400px;
+    border-radius: 10px;
+  }
+  
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:0;
+  }
+  
+  .hero-right .habla {
+    font-size: 36px;
+    font-weight: 400;
+    color: #fff;
+    border-bottom: 3px solid #61100d;
+  display: inline-block;
+  padding-bottom: 5px;
+  border: 2px solid #61100d; /* couleur et épaisseur */
+  padding: 5px 10px;     /* espace entre texte et bordure */
+  display: inline-block;  /* pour que la bordure s'adapte à la taille du texte */
+
+  color: #fff;                      /* couleur du texte */
+  -webkit-text-stroke: 3px #fff;    /* épaisseur et couleur du contour */
+  font-size: 50px;
+  }
+  
+  .hero-right .zidane {
+    font-size: 60px;
+    font-weight: 700;
+    color: #61100d;
+    border-bottom: 3px solid #fff;
+  display: inline-block;
+  padding-bottom: 5px;
+
+  color: #61100d;                      /* couleur du texte */
+  -webkit-text-stroke: 3px #61100d;    /* épaisseur et couleur du contour */
+  font-size: 50px;
+  }
+  
+  /* Social Icons */
+  .social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .social-icons a:hover {
+    color: #c2a97c;
+  }
+  
+  /* Responsive */
+  @media(max-width: 900px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-right {
+      align-items: center;
+    }
+  }
+
+  .btn-art a {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #d80000;
+    color: #1f242d;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 10px #564796;
+}
+
+.btn-art a:hover {
+    background: transparent;
+    color: #f30a0a;
+    box-shadow: none;
+}
+
+.art-zone {
+    background: #1f242d;
+ 
+}
+
+.drawings {
+    padding: 50px 20px;
+    background-color: #000000; /* léger fond pour faire ressortir les dessins */
+  }
+  
+  .drawings h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .drawing-grid {
+    display: flex;          /* aligne les dessins sur une ligne */
+    flex-wrap: wrap;        /* passe à la ligne si nécessaire */
+    gap: 15px;              /* espace entre chaque dessin */
+    justify-content: center; /* centrer le grid */
+  }
+  
+  .drawing-item {
+    flex: 0 1 200px;        /* largeur fixe max pour chaque dessin */
+    overflow: hidden;
+    border-radius: 0;    /* coins arrondis si tu veux */
+  }
+  
+  .drawing-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;      /* garde la proportion et remplis le cadre */
+    transition: transform 0.3s ease;
+  }
+  
+  .drawing-item img:hover {
+    transform: scale(1.05); /* léger zoom au hover pour effet dynamique */
+  }
+  
+  section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.8s ease-out, transform 1.8s ease-out;
+  }
+  
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  /* Footer */
+.footer {
+    background: #61100d;            /* noir */
+    color: #c2a97c;                 /* texte blanc */
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+  }
+  
+  .footer-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer .contact a {
+    color: #c2a97c;  /* beige doré pour l’email */
+    text-decoration: none;
+  }
+  
+  .footer .contact a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Icônes sociales */
+  .footer .social-icons {
+    margin: 20px 0;
+  }
+  
+  .footer .social-icons a {
+    color: #fff;
+    font-size: 22px;
+    margin: 0 12px;
+    transition: color 0.3s;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #c2a97c;   /* effet hover beige */
+  }
+  
+  /* Carte Google */
+  .footer .map {
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Logo */
+  .footer-logo img {
+    margin-top: 15px;
+    width: 80px;
+    height: auto;
+    opacity: 0.9;
+  }
+  
+
+  /* Section Contact */
+#contact {
+    background: #111;       /* fond sombre */
+    color: #fff;            /* texte blanc */
+    padding: 60px 20px;
+    text-align: center;
+
+    background-image: url("artbackground.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;   /* prend toute la hauteur de l’écran */
+  }
+  
+  #contact h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #c2a97c;         /* doré */
+  }
+  
+  #contact p {
+    margin-bottom: 30px;
+    color: #ccc;
+  }
+  
+  /* Formulaire */
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 2px solid #c2a97c;  /* bordure dorée */
+    border-radius: 10px;
+    background: #1a1a1a;        /* fond du formulaire */
+    text-align: left;
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #c2a97c;
+    outline: none;
+  }
+  
+  /* Bouton */
+  .btn-submit {
+    background: #c2a97c;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-submit:hover {
+    background: #a88a5f;
+  }
+  
