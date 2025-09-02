@@ -184,6 +184,8 @@
 .drawings {
     padding: 50px 20px;
     background-color: #000000; /* léger fond pour faire ressortir les dessins */
+    opacity: 1 !important;
+  transform: none !important;
   }
   
   .drawings h2 {
@@ -219,7 +221,7 @@
   }
   
   section {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(50px);
     transition: opacity 1.8s ease-out, transform 1.8s ease-out;
   }
