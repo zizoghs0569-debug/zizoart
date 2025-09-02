@@ -29,3 +29,17 @@ const menu = document.getElementById('menu');
 hamburger.addEventListener('click', () => {
   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+  
+    document.querySelectorAll("section").forEach(sec => observer.observe(sec));
+  });
